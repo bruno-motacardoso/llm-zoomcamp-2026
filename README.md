@@ -1,0 +1,1 @@
+Lesson followed from the followinggithub repo : [DataTalksClub/llm-zoomcamp](https://github.com/DataTalksClub/llm-zoomcamp).
