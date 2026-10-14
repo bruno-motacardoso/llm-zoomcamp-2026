@@ -11,7 +11,9 @@ dependencies = [
     "openai>=3.24.0",
     "python-dotenv>=1.2.4",
     "requests>=2.34.2",
+    "sentence-transformers>=6.1.0",
     "sqlitesearch>=0.3.0",
+    "torch>=2.14.1",
     "toyaikit>=0.0.11",
 ]
 
@@ -21,3 +23,11 @@ llm-zoomcamp-2026 = "llm_zoomcamp_2026:main"
 [build-system]
 requires = ["uv_build>=0.12.5,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
