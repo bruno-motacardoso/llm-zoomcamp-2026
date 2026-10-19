@@ -98,5 +98,5 @@ tasks:
 pluginDefaults:
   - type: io.kestra.plugin.ai.provider.GoogleGemini
     values:
-      modelName: gemini-2.5-flash
+      modelName: gemini-3.8-flash
       apiKey: "{{ secret('GEMINI_API_KEY') }}"
