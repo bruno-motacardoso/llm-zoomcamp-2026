@@ -11,8 +11,9 @@ tasks:
     type: io.kestra.plugin.ai.rag.ChatCompletion
     chatProvider:
       type: io.kestra.plugin.ai.provider.OpenAI
-      apiKey: "{{ secret('OPENAI_API_KEY') }}"
-      modelName: gpt-5-mini
+      apiKey: "{{ secret('IK_API_KEY') }}"
+      modelName: "Qwen/Qwen3.5-122B-A10B-FP8"
+      baseUrl: "{{ secret('IK_BASE_URL') }}"
     contentRetrievers:
       - type: io.kestra.plugin.ai.retriever.TavilyWebSearch
         apiKey: "{{ secret('TAVILY_API_KEY') }}"

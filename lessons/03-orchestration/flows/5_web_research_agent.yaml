@@ -40,8 +40,7 @@ tasks:
          - Key Findings (3-5 bullet points)
          - Detailed Analysis (2-3 paragraphs)
          - Sources (list URLs of key references)
-      4. Save the final report as 'research_report.md' in the /tmp directory
-         using the filesystem tool.
+      4. Save the final report as 'research_report.md' in the /tmp directory using the filesystem tool.
       Important rules:
       - Always use the TavilyWebSearch content retriever to get current information
       - Do not make up or hallucinate information
@@ -58,6 +57,9 @@ tasks:
         binds: ["{{workingDir}}:/tmp"]
     outputFiles:
       - research_report.md
+    configuration:
+      logRequests: true
+      logResponses: true
 
   - id: log_report
     type: io.kestra.plugin.core.log.Log

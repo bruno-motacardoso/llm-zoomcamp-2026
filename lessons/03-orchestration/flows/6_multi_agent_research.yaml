@@ -22,7 +22,7 @@ tasks:
       logRequests: false
       logResponses: false
     provider:
-      type: io.kestra.plugin.ai.provider.GoogleGemini
+      type: io.kestra.plugin.ai.provider.OpenAI
     systemMessage: |
       You are a senior market intelligence analyst. You can use the research tool to gather accurate, up-to-date company data. 
       After retrieving information, summarize and synthesize it into structured, factual insights.
@@ -62,7 +62,7 @@ tasks:
           Look for recent news from this year, funding announcements, blog posts, or competitor mentions.
           Return concise factual summaries — no markdown, no formatting, no speculation.
         provider:
-          type: io.kestra.plugin.ai.provider.GoogleGemini
+          type: io.kestra.plugin.ai.provider.OpenAI
         contentRetrievers:
           - type: io.kestra.plugin.ai.retriever.TavilyWebSearch
             apiKey: "{{ secret('TAVILY_API_KEY') }}"
@@ -96,7 +96,8 @@ tasks:
       separation of concerns.
 
 pluginDefaults:
-  - type: io.kestra.plugin.ai.provider.GoogleGemini
+  - type: io.kestra.plugin.ai.provider.OpenAI
     values:
-      modelName: gemini-3.8-flash
-      apiKey: "{{ secret('GEMINI_API_KEY') }}"
+      apiKey: "{{ secret('IK_API_KEY') }}"
+      modelName: "Qwen/Qwen3.5-122B-A10B-FP8"
+      baseUrl: "{{ secret('IK_BASE_URL') }}"
